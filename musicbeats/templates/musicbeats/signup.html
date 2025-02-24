@@ -1,0 +1,47 @@
+{% extends 'musicbeats/basic.html' %}
+{% block title %}Signup {% endblock %}
+
+{% block body%}
+<div class="container my-4">
+  <h2>Signup</h2>
+  <form method="POST" action="/musicbeats/signup" class="needs-validation" novalidate>
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" class="form-control" id="inputEmail" placeholder="name@gmail.com" name="email" required>
+      <div class="invalid-feedback">Please provide a valid email address.</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputUsername">Username</label>
+      <input type="text" class="form-control" id="inputUsername" name="username" required>
+      <div class="invalid-feedback">Please provide a username.</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputFirstName">First Name</label>
+      <input type="text" class="form-control" id="inputFirstName" name="firstname" required>
+      <div class="invalid-feedback">Please provide your first name.</div>
+    </div>
+  
+    <div class="form-group">
+      <label for="inputLastName">Last Name</label>
+      <input type="text" class="form-control" id="inputLastName" name="lastname" required>
+      <div class="invalid-feedback">Please provide your last name.</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputPassword">Password</label>
+      <input type="password" class="form-control" id="inputPassword" name="pass1" required>
+      <div class="invalid-feedback">Please provide a password.</div>
+    </div>
+    
+    <div class="form-group">
+      <label for="inputConfirmPassword">Confirm Password</label>
+      <input type="password" class="form-control" id="inputConfirmPassword" name="pass2" required>
+      <div class="invalid-feedback">Please confirm your password.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Signup</button>
+  </form>
+</div>
+{% endblock %}

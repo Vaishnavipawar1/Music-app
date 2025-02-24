@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    {% load static %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Gaana</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/musicbeats/songs">All Songs</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Hindi</a>
+              <a class="dropdown-item" href="#">Marathi</a>
+              <a class="dropdown-item" href="#">English</a>
+              <a class="dropdown-item" href="#">South</a>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">What's New</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+              
+            </form>
+          </div>
+        </div>
+      </nav>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'musicbeats/main1.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'musicbeats/main2.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'musicbeats/main3.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <center><h2 style="padding-top: 2%;">Trending Songs</h2></center>
+<div class="row" style="padding-top: 2%";>
+
+      <!--Cards-->
+      
+      <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                  <img src="{% static 'musicbeats/ts4.jpg'%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{i.name}}</h5>
+                      <p class="card-text">{{i.tags}}</p>
+                      <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                     
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+              
+                <div class="card">
+                  <img src="{% static 'musicbeats/ts5.jpg'%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{i.name}}</h5>
+                      <p class="card-text">{{i.tags}}</p>
+                      <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                     
+                    </div>
+                  </div>
+            </div>
+            
+            <div class="col">
+              
+                <div class="card">
+                  <img src="{% static 'musicbeats/ts3.jpg'%}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{i.name}}</h5>
+                      <p class="card-text">{{i.tags}}</p>
+                      <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                      
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <center><h2 style="padding-top: 2%;">Your Favourite Songs</h2></center>
+<div class="row" style="padding-top: 2%";>
+  
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+              <img src="{% static 'musicbeats/fs1.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                 
+                </div>
+              </div>
+        </div>
+        <div class="col">
+         
+            <div class="card">
+              <img src="{% static 'musicbeats/fs2.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text"> {{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col">
+         
+            <div class="card">
+              <img src="{% static 'musicbeats/fs3.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<center><h2 style="padding-top: 2%;">Your Liked Songs</h2></center>
+<div class="row" style="padding-top: 2%";>
+
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+              <img src="{% static 'musicbeats/l1.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col">
+          
+            <div class="card">
+              <img src="{% static 'musicbeats/ll2.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}} </h5>
+                  <p class="card-text"> {{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col">
+          
+            <div class="card">
+              <img src="{% static 'musicbeats/l3.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+
+<center><h2 style="padding-top: 2%;">Marathi Songs</h2></center>
+<div class="row" style="padding-top: 2%";>
+
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+              <img src="{% static 'musicbeats/m1.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col">
+        
+            <div class="card">
+              <img src="{% static 'musicbeats/mm2.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                 
+                </div>
+              </div>
+        </div>
+        <div class="col">
+          
+            <div class="card">
+              <img src="{% static 'musicbeats/m3.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<center><h2 style="padding-top: 2%;">One of the best singers</h2></center>
+<div class="row" style="padding-top: 2%";>
+
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+              <img src="{% static 'musicbeats/as.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col">
+          
+            <div class="card">
+              <img src="{% static 'musicbeats/sg.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+        <div class="col">
+          
+            <div class="card">
+              <img src="{% static 'musicbeats/aa.jpg'%}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <p class="card-text">{{i.tags}}</p>
+                  <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                  
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row" style="padding-top: 2%";>
+  
+<div class="container">
+  <div class="row">
+      <div class="col">
+          <div class="card">
+            <img src="{% static 'musicbeats/dr.jpg'%}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                <p class="card-text">{{i.tags}}</p>
+                <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                
+              </div>
+            </div>
+      </div>
+      <div class="col">
+        
+          <div class="card">
+            <img src="{% static 'musicbeats/bp.jpg'%}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                <p class="card-text">{{i.tags}}</p>
+                <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                
+              </div>
+            </div>
+      </div>
+      <div class="col">
+       
+          <div class="card">
+            <img src="{% static 'musicbeats/pp.jpg'%}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{i.name}}</h5>
+                <p class="card-text">{{i.tags}}</p>
+                <a href="/musicbeats/songs/{{i.song_id}}" class="btn btn-outline-danger">Listen Songs</a>
+                
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+
+
+</body>
+</html>
